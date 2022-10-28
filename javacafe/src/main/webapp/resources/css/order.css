@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+body{
+background-image: url("../img/order1.jpg");
+background-color: rgb(229 207 182);
+background-size: cover;
+background-repeat: no-repeat;
+}
+.txt {
+	position: absolute;
+	width:100%;
+	height:100%;
+    text-align: center;
+    z-index: -99;
+    
+    
+}
+h1{
+	margin-top: 200px;
+    font-size: 80px;
+}
+
+.order {
+	width: 500px;
+	height: 100px;
+	border-radius: 50px; 
+	border: 1px solid #9e856c;
+	font-size: 60px;
+	font-weight: 800;
+	background-color: tan;
+}
+.order:hover {
+	border: 1px solid #9e856c;
+	background-color: #9e856c;
+}
+.btn{
+	position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 100px;
+}

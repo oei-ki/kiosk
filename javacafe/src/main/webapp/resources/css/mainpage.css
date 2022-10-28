@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/*카테고리*/
+.category-box {
+	width:100%;
+	display:flex;
+	justify-content: center;
+}
+.category {
+	border-radius: 10px;
+	border: 1px solid black;
+	width: 15%;
+	height: 40px;
+    margin:10PX 10px 10PX 0;
+	background: #fc9ab3;
+	font-size: 23px;
+	font-weight: bold;
+}
+.category-box button:hover {
+	background: #fa7a9b;
+}
+.active {
+	background: #fa7a9b;
+}
+/*메뉴*/
+#contain {
+	position: relative;
+	width: 1300px;
+	background: #fc9ab3;
+	margin: 0 auto;
+	padding-left: 10px;
+	height: calc(100% + 200px);
+}
+.menuItem_ul {
+	display: inline-block;
+    width: 100%;;
+}
+
+li.menuItem {
+	position: relative;
+	margin: 20px 10px 20px 10px;
+	border: 1px solid black;
+	float: left;
+}vmfkdlajflzl
+
+/*카트*/
+.container {
+	position: relative;
+	height: 100%;
+}
+.cart-box {
+	height: 30%;
+	border: 1px solid black;
+	bottom: 0;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+}
+.menulist {
+	height: 70%;
+	border: 1px solid black;
+	margin: 5px;
+}
+.menulist_line {
+	width: 90%;
+	line-height: 30px;
+	border-bottom: 1px solid black;
+}
+table {
+	border-collapse: collapse;
+    width: 100%;
+}
+.list_btn {
+	width: 20px;
+}
+.payment {
+	display: flex;
+}
+.countbtn-box {
+	display: flex;
+}
