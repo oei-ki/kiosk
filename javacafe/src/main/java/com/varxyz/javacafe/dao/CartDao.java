@@ -45,12 +45,22 @@ public class CartDao {
 			public Cart mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Cart cart = new Cart();
 				cart.setCaid(rs.getLong("cateFk"));
-				cart.setOrderid(rs.getLong("orderid"));
+				cart.setOrderid(Cart.orderNum);
 				cart.setMenuName(rs.getString("menuName"));
 				cart.setNumber(rs.getInt("number"));
 				cart.setMenuPrice(rs.getDouble("menuPrice"));
 				return cart;
 			}
 		}, orderid);
+	}
+	
+	/**
+	 * 모달창 결제하기 s주문번호로 찾기
+	 * @param orderid
+	 * @return
+	 */
+	public List<Cart> getPayCart(long orderid) {
+		String sql="SELECT orderid, menuName, number, menuPrice, regDate FROM Cart WHERE orderid=?";
+		return jdbcTemplate.query(sql, new CartRowMapper(), orderid);
 	}
 }

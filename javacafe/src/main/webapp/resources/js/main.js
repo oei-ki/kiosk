@@ -143,8 +143,8 @@ $(document).on('click', '.listDeletbtn', function() {
 
 //메뉴전체삭제하기
 $(document).on('click', '.alldelete', function() {
-	console.log($('.alldelete').parent().prev().children().children().children())
-	$('.alldelete').parent().prev().children().children().children().remove();
+	console.log($('.alldelete').parent().parent().prev().children().children().children())
+	$('.alldelete').parent().parent().prev().children().children().children().remove();
 	
 	//합계구하기
  	const menuPriceList = $(".menuPrice")
@@ -166,7 +166,26 @@ $(document).on('click', '.alldelete', function() {
 	
 })
 
+//주문내역리스트 모달창
+$(document).on('click', '#modal-list', function() {
+ $(".cartmodellist").empty(); 
+ 	indexNumber = 0
+	$(".cartListtable").find("tr").each(function(i,e){	
+		let menuName = $(this).find("td")[0].innerText;
+		let menuNum = $(this).find("td").find("input")[0].value;
+		let menuPrice = $(this).find("td").find("input")[1].value;
+		console.log(menuNum)
+		
+		var html = '<tr>'
+		html += '<td><input size="20" type="text" name="cartList[' + indexNumber + '].menuName" value="'+ menuName +'"/></td>'
+		html += '<td><input type="text" name="cartList[' + indexNumber + '].number" value="'+ menuNum +'"/></td>'
+		html += '<td><input type="text" name="cartList[' + indexNumber + '].menuPrice" value="'+ menuPrice +'"/>원</td>'
+		html += '</tr>'
+		$(".cartmodellist").append(html)
+		indexNumber += 1
+	})
 
+})
 
 //증가감소버튼
 /*

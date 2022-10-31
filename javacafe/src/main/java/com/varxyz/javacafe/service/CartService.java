@@ -10,4 +10,5 @@ public interface CartService {
 	public int DeleteCart(Cart cart);
 	public List<Cart> getCart();
 	public List<Cart> getAllCartToKiosk(long orderid);
+	public List<Cart> getPayCart(long orderid);
 }

@@ -1,7 +1,9 @@
 @charset "UTF-8";
-
-body {
-	background: bisque;;
+#content {
+	width:100%;
+	height:100%;
+	padding: 40px;
+    box-sizing: border-box;
 }
 .button-box {
 	margin: 0 auto;
@@ -12,19 +14,31 @@ body {
 .main-btn {
 	width: 400px;
     height: 50px;
-	background: #fc9ab3;
+	background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
 	font-size: 20px;
 	font-weight: bold;
-	border: 1px solid #c94b66;
+	border: 1px solid #e6e7ed;
 	border-radius: 10px;
 	display: block;
     margin-top: 20px;
 }
 table {
 	border-collapse : collapse;
-	width: 100%;
-    margin-top: 50px;
+    width: 100%;
+    text-align: center;
 }
 table td {	
 	border: 1px solid black;	
+}
+hr {
+	margin: 20px 0;
+}
+.addmenu-box {
+	justify-content: center;
+    text-align: left;
+    display: grid;
+}
+#menuItem {
+	line-height: 44px;
+	font-size: 23px;
 }

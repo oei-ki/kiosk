@@ -24,7 +24,8 @@ INSERT INTO MenuItem (cateFk, menuName, menuSize, menuPrice, imgUrl) VALUES (106
 INSERT INTO MenuItem (cateFk, menuName, menuSize, menuPrice, imgUrl) VALUES (106,"마카롱", "Tall", 2000.0, "ccc21752d97e476ea58f09b1e99dabfb.jpg");
 INSERT INTO MenuItem (cateFk, menuName, menuSize, menuPrice, imgUrl) VALUES (106,"핫도그", "Tall", 3500.0, "a2720ed5ee784894be701be36a2feb5c.jpg");
 INSERT INTO MenuItem (cateFk, menuName, menuSize, menuPrice, imgUrl) VALUES (103,"민트초코프라페", "Tall", 4000.0, "6258b95eed56448a9712356921ada75f.jpg");
-
+INSERT INTO MenuItem (cateFk, menuName, menuSize, menuPrice, imgUrl) VALUES (102,"디카페인 콜드브루 라떼", "Tall", 4000.0, "ff70122a7b84437fa4ed973b4eff06c1.png");
+INSERT INTO MenuItem (cateFk, menuName, menuSize, menuPrice, imgUrl) VALUES (102,"디카페인 콜드브루 아메리카노", "Tall", 4000.0, "54a12b19942246158e355d8388907d75.png");
 
 
 

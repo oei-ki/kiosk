@@ -15,4 +15,6 @@ public class Cart {
 	private double menuPrice;
 	private Date regDate;
 	
+	public static long orderNum = 1;
+	
 }

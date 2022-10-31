@@ -6,16 +6,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>키오스크</title>
+<title>kiosk</title>
 <link rel="stylesheet" href="<c:url value='/resources/css/default.css'/>"/>
 <link rel="stylesheet" href="<c:url value='/resources/css/mainpage.css'/>">
 <script src = "http://code.jquery.com/jquery-latest.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-
-<p class="adminurl"><a onclick="location.href='admin';">관리자추가메뉴</a></p>
+<p class="adminurl"><a onclick="location.href='order';"><span class="material-symbols-outlined">
+arrow_back
+</span></a></p>
+<p class="adminurl"><a style="float: left;" onclick="location.href='admin';" >관리자추가메뉴</a></p>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 
 <div class="category-box">
@@ -36,32 +39,46 @@
 	<div class="cart-box">
 		<p>구매내역</p>
 		<div class="menulist">
-			<table>
+			<table class="cartListtable">
 			<!-- ajax들어감 -->
 			</table>
 <script type="text/javascript" src="<c:url value='/resources/js/cart.js'/>"></script>
 		</div>
 		<div class="payment">
-			<div>
+			<div class="payment-bottom">
 				<ul>
 					<li>수량 : <em class="totalNum"></em></li>
 					<li id="sumorder">합계 : <em class="totalPrice"></em></li>
 				</ul>
 			</div>
-			<button class="alldelete">전체취소</button>
-			<button>결제하기</button>
-			<a data-value="${menu.mid}" class="modal_btn"  rel="modal:open" href="#modal1"><span class="textLine">결제하기</span></a>
+			<div class="payment-bottom payment-btn">
+				<button class="alldelete purchase">전체취소</button>
+				<button class="purchase"><a id="modal-list" data-value="${menu.mid}" class="modal_btn"  rel="modal:open" href="#modal1">결제하기</a></button>
+			</div>
 		</div>
 	</div>
 </div>
 	
 <!-- modal body -->
 <div id="modal1" class="modal" >
-   <form action="post" method="post" class="modal_body">
-      <input class="modal_hidden_input" hidden name="bId" value="" />
-      비밀번호 : <input type="password" name="passwd" maxlength="4" />
-      <input class="submit_btn" type="submit" value="확인" />
-   </form>
+	<h2>주문내역확인</h2>
+	<hr/>
+	<div class="cart-list">	
+		<p>주문정보를 확인해 주세요</p>
+	    <form action="pay" method="post" class="modal_body">
+			<table class="testmodal">
+				<tr><th>상품명</th><th>수량</th><th>가격</th></tr>
+				<tbody class="cartmodellist">
+				</tbody>
+			</table>
+		    <div class="total-list">
+		    	<div><span>총수량 <em class="totalNum"></em> 개</span></div>
+		    	<div><span>총 결제금액 : <em class="totalPrice"></em> 원</span></div>
+		    </div>
+		    <input type="text" name="orderid" value="${cart1.orderid}">
+			<input class="Paying" type="submit" name="pay" value="결제하기">
+	    </form>
+	</div>
 </div>
 
 </body>

@@ -32,5 +32,10 @@ public class CartServiceImpl implements CartService {
 		return cartDao.getAllCartToKiosk(orderid);
 	}
 
+	@Override
+	public List<Cart> getPayCart(long orderid) {
+		return cartDao.getPayCart(orderid);
+	}
+
 
 }

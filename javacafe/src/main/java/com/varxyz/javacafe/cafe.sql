@@ -24,10 +24,8 @@ CREATE TABLE Cart(
 	menuName	VARCHAR(50)		NOT NULL,
 	number		BIGINT			NOT NULL,
 	menuPrice	DOUBLE			NOT NULL,
-	regDate		TIMESTAMP		NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+	regDate		TIMESTAMP		NOT NULL	DEFAULT CURRENT_TIMESTAMP
 	
-	CONSTRAINT Cart_orderid_FK
-		FOREIGN KEY(orderid) REFERENCES MenuItem(mid)
 )AUTO_INCREMENT = 301;
 
 /**카트 커맨드에서 결제하기가 눌러졌을때 스테틱변수인orderid 값을 1증가**/
