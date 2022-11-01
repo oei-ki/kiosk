@@ -15,11 +15,12 @@
 </head>
 <body>
 	결제완료 
-
-<c:forEach var="cart" items="${cartList1}">
-	<button class=cart id="${cart.orderid}" value="${cart.orderid}">${cart.menuName}</button>
+<c:forEach var="cart" items="${cartList}">
+	<!-- <button class=cart id="${cart.oid}" value="${cart.oid}">${cart.menuName}</button> -->
+	<li>${cart.menuName}</li>
+	<li>${cart.number}</li>
+	<li>${cart.menuPrice}</li>
 </c:forEach> 
-
  <div class="total-list">
  	<div><span>총수량 <em class="totalNum"></em></span></div>
  	<div><span>총 결제금액 : <em class="totalPrice"></em></span></div>

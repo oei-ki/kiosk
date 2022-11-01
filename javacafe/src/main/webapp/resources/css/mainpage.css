@@ -111,6 +111,7 @@ table {
 	background-color: #beb6d1;
     border: 0.5px solid #9ea6b5;
     margin-right: 5px;
+    font-size: 19px;
 }
 .payment-btn {
     margin: 3px 0;
@@ -122,6 +123,9 @@ table {
 	border:none;
 	outline: none;
 	width: 30%;
+}
+#modal1 input:nth-of-type(1){
+	width: 80%;
 }
 hr {
 	border: 2px solid #ff949d;

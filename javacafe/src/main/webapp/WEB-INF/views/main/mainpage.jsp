@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"/>
 <title>kiosk</title>
 <link rel="stylesheet" href="<c:url value='/resources/css/default.css'/>"/>
 <link rel="stylesheet" href="<c:url value='/resources/css/mainpage.css'/>">
@@ -75,7 +76,6 @@ arrow_back
 		    	<div><span>총수량 <em class="totalNum"></em> 개</span></div>
 		    	<div><span>총 결제금액 : <em class="totalPrice"></em> 원</span></div>
 		    </div>
-		    <input type="text" name="orderid" value="${cart1.orderid}">
 			<input class="Paying" type="submit" name="pay" value="결제하기">
 	    </form>
 	</div>

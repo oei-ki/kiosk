@@ -59,8 +59,8 @@ public class CartDao {
 	 * @param orderid
 	 * @return
 	 */
-	public List<Cart> getPayCart(long orderid) {
+	public Cart getPayCart(long orderid) {
 		String sql="SELECT orderid, menuName, number, menuPrice, regDate FROM Cart WHERE orderid=?";
-		return jdbcTemplate.query(sql, new CartRowMapper(), orderid);
+		return jdbcTemplate.queryForObject(sql, new CartRowMapper(), orderid);
 	}
 }

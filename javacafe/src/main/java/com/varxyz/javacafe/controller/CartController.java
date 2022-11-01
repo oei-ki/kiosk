@@ -30,16 +30,26 @@ public class CartController {
 	   }
 	   
 	   @GetMapping("/cafe/pay")
-	   public String CartModalForm(Model model, HttpServletRequest request) {
+	   public String CartModalForm(Model model, HttpServletRequest request) throws NumberFormatException {
+		   
+		  // long oid = Long.parseLong(request.getParameter("orderid"));
+		   
+		// sevice호출 할 객체 생성 및 값 입력
+		   //orderid를 가져오는 dao를 만들어야함 
+		  // Cart cart = cartService.getPayCart(oid);
+		  // request.setAttribute("orderid", oid);
+		 //  System.out.println(oid);
+		   //request.setAttribute("cart", cart);
+		   
+			List<Cart> cartList = cartService.getCart();
+			request.setAttribute("cartList", cartList);
 
-			
 	      return "main/pay";
 	   }
 
 	  @PostMapping("/cafe/pay") 
 	  public String cartForm(@ModelAttribute(value="CartList") CartList cartList, Cart cart, Model model, HttpServletRequest request) {
-	  
-
+		  
 		  ArrayList<CartArgument> carts = cartList.getCartList();
 		  int cartSize = carts.size();
 		  for (int i = 0; i < cartSize; i++) {
@@ -51,16 +61,7 @@ public class CartController {
 		      cartService.addCart(cart);
 		  }
 		  Cart.orderNum += 1;
-		  
-		   long orderid = Integer.parseInt(request.getParameter("orderid"));
-		   
-		   Cart cart1 = new Cart();
-		   cart1.setOrderid(orderid);
-		   System.out.println(orderid);
-	        
-			List<Cart> cartList1 = cartService.getPayCart(orderid);
-			request.setAttribute("cartList1", cartList1);
-			System.out.println(cartList1);
+		 
 		  
 		  return "main/pay"; 
 		  

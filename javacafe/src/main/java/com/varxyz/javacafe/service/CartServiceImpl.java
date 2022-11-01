@@ -33,7 +33,7 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public List<Cart> getPayCart(long orderid) {
+	public Cart getPayCart(long orderid) {
 		return cartDao.getPayCart(orderid);
 	}
 
