@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.varxyz.javacafe.dao.CategoryCommand;
 import com.varxyz.javacafe.domain.Cart;
 import com.varxyz.javacafe.domain.CartArgument;
 import com.varxyz.javacafe.domain.CartList;
@@ -30,20 +31,20 @@ public class CartController {
 	   }
 	   
 	   @GetMapping("/cafe/pay")
-	   public String CartModalForm(Model model, HttpServletRequest request) throws NumberFormatException {
+	   public String CartModalForm(Model model, HttpServletRequest request) {
 		   
-		  // long oid = Long.parseLong(request.getParameter("orderid"));
-		   
-		// sevice호출 할 객체 생성 및 값 입력
-		   //orderid를 가져오는 dao를 만들어야함 
-		  // Cart cart = cartService.getPayCart(oid);
-		  // request.setAttribute("orderid", oid);
-		 //  System.out.println(oid);
-		   //request.setAttribute("cart", cart);
-		   
-			List<Cart> cartList = cartService.getCart();
-			request.setAttribute("cartList", cartList);
+		  long oid = Cart.orderNum - 1;
+		  System.out.println(oid);
 
+		 //sevice호출 할 객체 생성 및 값 입력
+		  // orderid를 가져오는 dao를 만들어야함 
+		  List<Cart> cartList = cartService.getPayCart(oid);
+		  request.setAttribute("orderid", oid);
+		  request.setAttribute("cartList", cartList);
+			/*
+			 * List<Cart> cartList = cartService.getCart(); request.setAttribute("cartList",
+			 * cartList);
+			 */
 	      return "main/pay";
 	   }
 
@@ -63,23 +64,8 @@ public class CartController {
 		  Cart.orderNum += 1;
 		 
 		  
-		  return "main/pay"; 
-		  
+		  return "redirect:pay"; 
+		  //redirect -> 사용된 페이지에 한번더 값을 전달해줘서 로딩해야할 때 
+		  //껏다 켰을때 카드비우기 만들기 init?? 처음에 자동실행되게 만들기
 	   }
-	 
-	
-	
-	/*
-	 * @PostMapping("/cafe/deleteCart") public String deleteCartForm(Model
-	 * model,HttpServletRequest request) throws Exception {
-	 * 
-	 * long caid =Integer.parseInt(request.getParameter("caid"));
-	 * 
-	 * Cart cart = new Cart(); cart.setCaid(caid);
-	 * 
-	 * cartService.DeleteCart(cart);
-	 * 
-	 * return "redirect:add_category"; }
-	 */
-	//input 값을 request를 통해서 cid값을 넘겨줌 
 }

@@ -59,8 +59,9 @@ public class CartDao {
 	 * @param orderid
 	 * @return
 	 */
-	public Cart getPayCart(long orderid) {
-		String sql="SELECT orderid, menuName, number, menuPrice, regDate FROM Cart WHERE orderid=?";
-		return jdbcTemplate.queryForObject(sql, new CartRowMapper(), orderid);
+	public List<Cart> getPayCart(long orderid) {
+		String sql="SELECT caid, orderid, menuName, number, menuPrice, regDate FROM Cart WHERE orderid=?";
+		return jdbcTemplate.query(sql, new CartRowMapper(), orderid);
+		//queryForObject 객체 하나만 받아와서 문제 
 	}
 }

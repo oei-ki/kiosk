@@ -64,7 +64,7 @@ arrow_back
 <div id="modal1" class="modal" >
 	<h2>주문내역확인</h2>
 	<hr/>
-	<div class="cart-list">	
+	<div class="cart-list">
 		<p>주문정보를 확인해 주세요</p>
 	    <form action="pay" method="post" class="modal_body">
 			<table class="testmodal">

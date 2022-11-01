@@ -20,4 +20,6 @@ public class CartCommand {
 	private double menuPrice;
 	private Date regDate;
 	
+	
+	
 }
